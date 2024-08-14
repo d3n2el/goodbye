@@ -1,12 +1,13 @@
 import inflect
 def main():
     goodbye=[]
+    p = inflect.engine()
     while True:
         try:
             user_input= input("Name:")
-            s= goodbye.append(user_input)
+            goodbye.append(user_input)
         except EOFError:
+            print()
             break
-    print("goodbye, goodbye, to " + ", ".join(goodbye))
-
-main()
+    formatted_list = p.join(goodbye)
+    print("Goodbye, goodbye, to " +formatted_list)
